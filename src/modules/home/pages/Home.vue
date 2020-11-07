@@ -2,9 +2,17 @@
   <div class="home">
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld :msg="'测试vuex'"></HelloWorld>
-    <button @click="add">+</button>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <button @click="de">-</button>
+    <div>
+      <button @click="add">+</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button @click="de">-</button>
+    </div>
+    <hr />
+    <div>
+      <button @click="addAsync">async+</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button @click="deAsync">async-</button>
+    </div>
     <div>
       <p>{{ count }}</p>
       <hr />
@@ -18,6 +26,7 @@ import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
+  name: "Home",
   components: {
     HelloWorld,
   },
@@ -32,16 +41,25 @@ export default {
       increment: "increment",
       decrement: "decrement",
     }),
-    ...mapActions({}),
-
+    ...mapActions({
+      incrementAsync: "incrementAsync",
+      decrementAsync: "decrementAsync",
+    }),
     add() {
-      // this.increment(1);
-      this.$store.commit("increment", 1);
-      console.log(this.count);
+      this.increment(1);
+    },
+    addAsync() {
+      this.incrementAsync(1000).then((res) => {
+        console.log("异步增加后的值为：", res);
+      });
     },
     de() {
-      // this.decrement(1);
-      this.$store.commit("decrement", 1);
+      this.decrement(1);
+    },
+    deAsync() {
+      this.decrementAsync(1000).then((res) => {
+        console.log("异步减少后的值为：", res);
+      });
     },
   },
 };
@@ -49,7 +67,7 @@ export default {
 
 <style scoped lang="scss">
 button {
-  width: 50px;
+  min-width: 50px;
   height: 30px;
   cursor: pointer;
 }

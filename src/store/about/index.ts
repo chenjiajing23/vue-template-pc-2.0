@@ -1,6 +1,6 @@
-import actions from "./actions";
-import mutations from "./mutations";
 import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 import { IState } from "./type";
 
 export const state: IState = {

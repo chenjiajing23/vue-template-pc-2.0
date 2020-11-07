@@ -1,5 +1,10 @@
 import Vue from "vue";
-import Vuex, { GetterTree, MutationTree, ActionTree } from "vuex";
+import Vuex, { createLogger } from "vuex";
+
+// root
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
 import home from "./home";
 import about from "./about";
@@ -16,26 +21,6 @@ const state: RootState = {
   count: 0,
 };
 
-// getters
-const getters: GetterTree<RootState, RootState> = {
-  countGetters(state): string {
-    return `当前count的值为：${state.count}`;
-  },
-};
-
-//mutations
-const mutations: MutationTree<RootState> = {
-  increment(state, step = 1) {
-    state.count += step;
-  },
-  decrement(state, step = 1) {
-    state.count -= step;
-  },
-};
-
-// actions
-const actions: ActionTree<RootState, RootState> = {};
-
 const store = new Vuex.Store({
   state,
   getters,
@@ -46,6 +31,7 @@ const store = new Vuex.Store({
     about,
   },
   strict: debug,
+  plugins: debug ? [createLogger()] : [],
 });
 
 export default store;
