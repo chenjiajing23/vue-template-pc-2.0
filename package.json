@@ -1,14 +1,16 @@
 {
   "name": "vue-template-pc",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "mock": "nodemon --watch mock ./node_modules/.bin/good-mock"
   },
   "dependencies": {
     "core-js": "^3.7.0",
+    "good-apis": "^0.0.9",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.0.2",
@@ -26,14 +28,17 @@
     "@vue/cli-service": "~4.5.8",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^7.12.1",
+    "eslint": "^7.13.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.1.0",
+    "good-mock": "^1.2.2",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "sass": "^1.29.0",
     "sass-loader": "^10.0.5",
     "typescript": "~4.0.5",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webpack-bundle-analyzer": "^4.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -56,5 +61,14 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

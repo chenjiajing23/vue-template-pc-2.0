@@ -21,25 +21,22 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from "vuex";
-const {
-  mapState,
-  mapGetters,
-  mapMutations,
-  mapActions,
-} = createNamespacedHelpers("about");
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapGetters, mapMutations, mapActions } = createNamespacedHelpers(
+  'about'
+);
 
 export default {
-  name: "About",
+  name: 'About',
 
   computed: {
-    ...mapState({ list: (state) => state.list }),
-    ...mapGetters({ aboutList: "aboutList" }),
+    ...mapState({ list: state => state.list }),
+    ...mapGetters({ aboutList: 'aboutList' })
   },
   methods: {
-    ...mapMutations(["addList", "removeList"]),
-    ...mapActions(["addListAsync", "removeListAsync"]),
-  },
+    ...mapMutations(['addList', 'removeList']),
+    ...mapActions(['addListAsync', 'removeListAsync'])
+  }
 };
 </script>
 

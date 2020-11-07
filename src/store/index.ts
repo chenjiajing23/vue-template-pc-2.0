@@ -1,16 +1,16 @@
-import Vue from "vue";
-import Vuex, { createLogger } from "vuex";
+import Vue from 'vue';
+import Vuex, { createLogger } from 'vuex';
 
 // root
-import getters from "./getters";
-import mutations from "./mutations";
-import actions from "./actions";
+import getters from './getters';
+import mutations from './mutations';
+import actions from './actions';
 
-import home from "./home";
-import about from "./about";
+import home from './home';
+import about from './about';
 
 Vue.use(Vuex);
-const debug = process.env.Node_ENV !== "production";
+const debug = process.env.NODE_ENV !== 'production';
 
 export interface RootState {
   count: number;
@@ -18,7 +18,7 @@ export interface RootState {
 
 // state
 const state: RootState = {
-  count: 0,
+  count: 0
 };
 
 const store = new Vuex.Store({
@@ -28,10 +28,10 @@ const store = new Vuex.Store({
   actions,
   modules: {
     home,
-    about,
+    about
   },
   strict: debug,
-  plugins: debug ? [createLogger()] : [],
+  plugins: debug ? [createLogger()] : []
 });
 
 export default store;

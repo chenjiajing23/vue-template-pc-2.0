@@ -1,5 +1,5 @@
-import { MutationTree } from "vuex";
-import { RootState } from "./index";
+import { MutationTree } from 'vuex';
+import { RootState } from './index';
 
 //mutations
 const mutations: MutationTree<RootState> = {
@@ -8,7 +8,7 @@ const mutations: MutationTree<RootState> = {
   },
   decrement(state, step = 1) {
     state.count -= step;
-  },
+  }
 };
 
 export default mutations;

@@ -1,6 +1,6 @@
-import { GetterTree } from "vuex";
-import { IState } from "./type";
-import { RootState } from "@/store";
+import { GetterTree } from 'vuex';
+import { IState } from './type';
+import { RootState } from '@/store';
 
 const getters: GetterTree<IState, RootState> = {};
 

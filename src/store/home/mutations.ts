@@ -1,5 +1,5 @@
-import { MutationTree } from "vuex";
-import { IState } from "./type";
+import { MutationTree } from 'vuex';
+import { IState } from './type';
 
 const mutations: MutationTree<IState> = {};
 

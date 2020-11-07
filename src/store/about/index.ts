@@ -1,10 +1,10 @@
-import getters from "./getters";
-import mutations from "./mutations";
-import actions from "./actions";
-import { IState } from "./type";
+import getters from './getters';
+import mutations from './mutations';
+import actions from './actions';
+import { IState } from './type';
 
 export const state: IState = {
-  list: [1],
+  list: [1]
 };
 
 export default {
@@ -12,5 +12,5 @@ export default {
   state,
   getters,
   actions,
-  mutations,
+  mutations
 };

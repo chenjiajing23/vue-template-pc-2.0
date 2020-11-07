@@ -1,5 +1,5 @@
-import { MutationTree } from "vuex";
-import { IState } from "./type";
+import { MutationTree } from 'vuex';
+import { IState } from './type';
 
 const mutations: MutationTree<IState> = {
   addList(state, payload = 1) {
@@ -7,7 +7,7 @@ const mutations: MutationTree<IState> = {
   },
   removeList(state) {
     state.list.pop();
-  },
+  }
 };
 
 export default mutations;
