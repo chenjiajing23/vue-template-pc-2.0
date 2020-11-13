@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 Vue.use(VueRouter);
 
-// module下面的路由
+// modules下面的路由
 let routes: RouteConfig[] = [];
 
 try {

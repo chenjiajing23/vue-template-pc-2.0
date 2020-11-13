@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "serve": "node ./server/bin/index.js",
     "mock": "nodemon --watch mock ./node_modules/.bin/good-mock"
   },
   "dependencies": {
@@ -18,8 +19,8 @@
     "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "@typescript-eslint/parser": "^4.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
     "@vue/cli-plugin-babel": "~4.5.8",
     "@vue/cli-plugin-eslint": "~4.5.8",
     "@vue/cli-plugin-router": "~4.5.8",
@@ -35,7 +36,7 @@
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "sass": "^1.29.0",
-    "sass-loader": "^10.0.5",
+    "sass-loader": "^10.1.0",
     "typescript": "~4.0.5",
     "vue-template-compiler": "^2.6.12",
     "webpack-bundle-analyzer": "^4.1.0"
