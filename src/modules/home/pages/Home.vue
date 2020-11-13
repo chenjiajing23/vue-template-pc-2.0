@@ -3,15 +3,15 @@
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld :msg="'测试vuex'"></HelloWorld>
     <div>
-      <button @click="add">+</button>
+      <a-button type="primary" @click="add">+</a-button>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <button @click="de">-</button>
+      <a-button type="primary" @click="de">-</a-button>
     </div>
     <hr />
     <div>
-      <button @click="addAsync">async+</button>
+      <a-button type="primary" @click="addAsync">async+</a-button>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <button @click="deAsync">async-</button>
+      <a-button type="primary" @click="deAsync">async-></a-button>
     </div>
     <div>
       <p>{{ count }}</p>

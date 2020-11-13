@@ -3,7 +3,7 @@ const Home = () => import('./pages/Home.vue');
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
   }

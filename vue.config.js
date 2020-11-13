@@ -5,6 +5,18 @@ let target = 'http://localhost:1234';
 
 module.exports = {
   publicPath: process.env.VUE_APP_CDN_HOST,
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          modifyVars: {
+            'primary-color': '#1890ff',
+          },
+          javascriptEnabled: true,
+        },
+      },
+    },
+  },
 
   // 本地开发接口转发
   devServer: {
@@ -31,5 +43,5 @@ module.exports = {
     } else {
       // 生产环境
     }
-  }
+  },
 };
